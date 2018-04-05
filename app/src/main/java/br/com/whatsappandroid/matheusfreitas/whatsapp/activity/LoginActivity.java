@@ -16,12 +16,14 @@ import android.widget.Toast;
 
 import com.github.rtoshiro.util.format.SimpleMaskFormatter;
 import com.github.rtoshiro.util.format.text.MaskTextWatcher;
+import com.google.firebase.database.DatabaseReference;
 
 import java.time.Instant;
 import java.util.HashMap;
 import java.util.Random;
 
 import br.com.whatsappandroid.matheusfreitas.whatsapp.R;
+import br.com.whatsappandroid.matheusfreitas.whatsapp.config.ConfiguracaoFirebase;
 import br.com.whatsappandroid.matheusfreitas.whatsapp.helper.Permissao;
 import br.com.whatsappandroid.matheusfreitas.whatsapp.helper.Preferencias;
 
@@ -37,12 +39,14 @@ public class LoginActivity extends AppCompatActivity {
             Manifest.permission.INTERNET
     };
 
+    private DatabaseReference referenciaFirebase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Permissao.validaPermissoes(1, this, permissoesNecessarias);
+        /* Permissao.validaPermissoes(1, this, permissoesNecessarias);
 
         nome = (EditText) findViewById(R.id.edit_nome);
         telefone = (EditText) findViewById(R.id.edit_telefone);
@@ -50,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
         codArea = (EditText) findViewById(R.id.edit_cod_area);
         cadastrar = (Button) findViewById(R.id.bt_cadastrar);
 
-        /*Definir mascaras*/
+        /*Definir mascaras
         SimpleMaskFormatter simpleMaskCodPais = new SimpleMaskFormatter("+NN");
         SimpleMaskFormatter simpleMaskCodArea = new SimpleMaskFormatter("NN");
         SimpleMaskFormatter simpleMaskTelefone = new SimpleMaskFormatter("NNNNN-NNNN");
@@ -91,14 +95,19 @@ public class LoginActivity extends AppCompatActivity {
                 boolean envioSMS = enviaSMS("+" + telefoneSemFormatacao,  mensagemEnvio);
 
                 if(envioSMS){
-                    Intent intent = new Intent(LoginActivity.this, ValidadorActivity.class);
-                    startActivity(intent);
+                    //Intent intent = new Intent(LoginActivity.this, .class);
+                    //startActivity(intent);
                     finish();
                 }else {
                     Toast.makeText(LoginActivity.this, "Problema ao enviar o SMS, tente novamente!!", Toast.LENGTH_LONG).show();
                 }
             }
-        });
+        });*/
+    }
+
+    public void abrirCadastroUsuario(View view){
+        Intent intent = new Intent(LoginActivity.this, CadastrarUsuarioActivity.class);
+        startActivity(intent);
     }
 
     /*Envio do SMS*/

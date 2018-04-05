@@ -4,4 +4,5 @@
     <dimen name="altura_logo">163dp</dimen>
     <dimen name="tamanho_titulo">20dp</dimen>
     <dimen name="texto_validacao_size">15dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 </resources>
