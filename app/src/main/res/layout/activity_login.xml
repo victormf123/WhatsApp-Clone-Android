@@ -49,22 +49,23 @@
             android:layout_marginTop="15dp"
             android:ems="10"
             android:hint="Digite sua senha"
-            android:inputType="textPersonName" />
+            android:inputType="textPassword" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/bt_logar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/edit_login_senha"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="25dp"
-            android:text="@string/bt_logar" />
+            android:text="@string/bt_logar"
+            android:theme="@style/botaoPadrao"/>
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/button2"
+            android:layout_below="@+id/bt_logar"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="23dp"
             android:onClick="abrirCadastroUsuario"
