@@ -36,6 +36,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:parentActivityName=".activity.MainActivity"
+            android:name=".activity.ConversaActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value="br.com.whatsappandroid.matheusfreitas.whatsapp.activity.MainActivity"
+                ></meta-data>
+        </activity>
     </application>
 
 </manifest>

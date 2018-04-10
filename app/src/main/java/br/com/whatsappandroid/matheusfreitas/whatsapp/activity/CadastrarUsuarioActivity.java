@@ -21,6 +21,7 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
 
 import br.com.whatsappandroid.matheusfreitas.whatsapp.R;
 import br.com.whatsappandroid.matheusfreitas.whatsapp.config.ConfiguracaoFirebase;
@@ -36,6 +37,7 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
     private Button botaoCadastrar;
     private Usuario usuario;
     private FirebaseAuth autenticacao;
+
 
 
     @Override
@@ -77,8 +79,10 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
                         usuario.setId(identificadorUsuario);
                         usuario.salvar();
 
+
+
                         Preferencias preferencias = new Preferencias(CadastrarUsuarioActivity.this);
-                        preferencias.salvarUsuarioPreferencias(identificadorUsuario);
+                        preferencias.salvarUsuarioPreferencias(identificadorUsuario, usuario.getNome());
 
                         abririLoginUsuario();
                     }else {

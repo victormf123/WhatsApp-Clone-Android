@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
         alertDialog.setPositiveButton("Cadastrar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                String emailContato = editText.getText().toString();
+        String emailContato = editText.getText().toString();
 
                 if(emailContato.isEmpty()){
                     Toast.makeText(MainActivity.this, "Preencha o e-mail", Toast.LENGTH_LONG).show();
